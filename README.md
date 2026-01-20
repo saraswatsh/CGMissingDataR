@@ -1,18 +1,35 @@
-# CGMissingData (R)
 
-This is an R wrapper around the provided Python implementation.
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-## Install (development)
+# CGMissingDataR
 
-```r
-# From a local checkout
-install.packages("CGMissingData", repos = NULL, type = "source")
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/saraswatsh/CGMissingData/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/saraswatsh/CGMissingData/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/saraswatsh/CGMissingData/graph/badge.svg)](https://app.codecov.io/gh/saraswatsh/CGMissingData)
+<!-- badges: end -->
+
+CGMissingDataR is an R package wrapping the CGMissingData Python library
+for evaluating model performance under feature missingness by:
+
+- injecting missing values into feature columns at specified masking
+  rates,
+- imputing missing values using a Multiple Imputation by Chained
+  Equations (MICE)-style iterative imputer, and
+- training Random Forest and k-Nearest Neighbors regressors to report
+  Mean ABsolute Percentage Error (MAPE) and R across missingness levels.
+
+## Installation
+
+R Prerequisites:
+
+``` r
+install.packages("reticulate")
 ```
 
-## Use
+Install the development version of CGMissingDataR from GitHub:
 
-```r
-library(CGMissingData)
-res <- run_missingness_benchmark("Modified_Data_1P (1).csv")
-print(res)
+``` r
+devtools::install_github("saraswatsh/CGMissingDataR")
 ```

@@ -1,4 +1,4 @@
 library(testthat)
-library(CGMissingData)
+library(CGMissingDataR)
 
-test_check("CGMissingData")
+test_check("CGMissingDataR")

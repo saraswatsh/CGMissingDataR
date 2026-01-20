@@ -1,4 +1,4 @@
-Package: CGMissingData
+Package: CGMissingDataR
 Title: Missingness Benchmark (MICE Imputation, Random Forest, kNN)
 Version: 0.0.0.9000
 Authors@R: c(
@@ -25,4 +25,5 @@ Suggests:
 Config/testthat/edition: 3
 NeedsCompilation: no
 Language: en-US
-
+URL: https://github.com/saraswatsh/CGMissingDataR
+BugReports: https://github.com/saraswatsh/CGMissingDataR/issues

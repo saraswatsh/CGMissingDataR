@@ -2,7 +2,7 @@
 % Please edit documentation in R/runner.R
 \name{run_missingness_benchmark}
 \alias{run_missingness_benchmark}
-\title{Run missingness benchmark (Python-backed)}
+\title{Run missingness benchmark}
 \usage{
 run_missingness_benchmark(
   data_path,
@@ -39,11 +39,13 @@ run_missingness_benchmark(
 A data.frame with columns MaskRate, Model, MAPE, R2.
 }
 \description{
-Loads a CSV, splits train/validation, masks \emph{feature} values at various rates,
+Loads a CSV, splits train/validation, masks feature values at various rates,
 imputes via an Iterative Imputer (MICE-style), trains Random Forest and kNN
 regressors, and returns MAPE and R2 per model and mask rate.
-}
-\details{
+
 This function is a thin R wrapper over the Python implementation shipped in
 \code{inst/python/CGMissingData}.
+}
+\author{
+Shubh Saraswat, Hasin Shahed Shad, and Xiaohua Douglas Zhang
 }
