@@ -51,14 +51,14 @@ run_missingness_benchmark <- function(
   if (
     !exists(
       ".cgmd_py",
-      envir = asNamespace("CGMissingData"),
+      envir = asNamespace("CGMissingDataR"),
       inherits = FALSE
     ) ||
-      is.null(get(".cgmd_py", envir = asNamespace("CGMissingData")))
+      is.null(get(".cgmd_py", envir = asNamespace("CGMissingDataR")))
   ) {
     stop("Python module was not initialized. Check reticulate configuration.")
   }
-  mod <- get(".cgmd_py", envir = asNamespace("CGMissingData"))
+  mod <- get(".cgmd_py", envir = asNamespace("CGMissingDataR"))
 
   cfg <- mod$runner$BenchmarkConfig(
     test_size = test_size,
