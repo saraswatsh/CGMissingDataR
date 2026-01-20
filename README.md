@@ -5,9 +5,9 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/saraswatsh/CGMissingData/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/saraswatsh/CGMissingData/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/saraswatsh/CGMissingDataR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/saraswatsh/CGMissingDataR/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/saraswatsh/CGMissingData/graph/badge.svg)](https://app.codecov.io/gh/saraswatsh/CGMissingData)
+coverage](https://codecov.io/gh/saraswatsh/CGMissingDataR/graph/badge.svg)](https://app.codecov.io/gh/saraswatsh/CGMissingDataR)
 <!-- badges: end -->
 
 CGMissingDataR is an R package wrapping the CGMissingData Python library

@@ -23,7 +23,11 @@
 #' @return A data.frame with columns MaskRate, Model, MAPE, R2.
 #' @import reticulate
 #' @examples
-#'
+#' data("CGMExampleData")
+#' tmp <- tempfile(fileext = ".csv")
+#' write.csv(CGMExampleData, tmp, row.names = FALSE)
+#' results <- run_missingness_benchmark(tmp, mask_rates = c(0.05, 0.10))
+#' head(results)
 #' @export
 run_missingness_benchmark <- function(
   data_path,

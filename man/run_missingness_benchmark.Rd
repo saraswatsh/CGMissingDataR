@@ -46,6 +46,13 @@ regressors, and returns MAPE and R2 per model and mask rate.
 This function is a thin R wrapper over the Python implementation shipped in
 \code{inst/python/CGMissingData}.
 }
+\examples{
+data("CGMExampleData")
+tmp <- tempfile(fileext = ".csv")
+write.csv(CGMExampleData, tmp, row.names = FALSE)
+results <- run_missingness_benchmark(tmp, mask_rates = c(0.05, 0.10))
+head(results)
+}
 \author{
 Shubh Saraswat, Hasin Shahed Shad, and Xiaohua Douglas Zhang
 }

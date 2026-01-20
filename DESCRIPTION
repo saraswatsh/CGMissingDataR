@@ -7,9 +7,7 @@ Authors@R: c(
     person("Hasin Shahed Shad", email = "hasin.shad@uky.edu", role = "aut"),
     person("Xiaohua Douglas", "Zhang", email = "douglas.zhang@uky.edu", role = "aut",
     comment = c(ORCID = "0000-0002-2486-7931")))
-Description: Provides an R interface to a small Python benchmark that masks feature values,
-    performs MICE-style imputation, trains Random Forest and kNN regressors, and reports
-    MAPE and R2 across missingness rates.
+Description: Evaluates predictive performance under feature-level missingness in repeated-measures continuous glucose monitoring-like data. The benchmark injects missing values at user-specified rates, imputes incomplete feature matrices using an iterative chained-equations approach inspired by multivariate imputation by chained equations (MICE) (Melissa J. Azur, Elizabeth A. Stuart, Constantine Frangakis and Philip J. Leaf (2011) <doi:10.1002/mpr.329>), fits Random Forest regression models (Leo Breiman (2001) <doi:10.1023/A:1010933404324>) and k-nearest-neighbor regression models (Zhongheng Zhang (2016) <doi:10.21037/atm.2016.03.37>), and reports mean absolute percentage error (MAPE) and R-squared (R2) across missingness rates.
 License: GPL (>= 2)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -27,3 +25,4 @@ NeedsCompilation: no
 Language: en-US
 URL: https://github.com/saraswatsh/CGMissingDataR
 BugReports: https://github.com/saraswatsh/CGMissingDataR/issues
+LazyData: true
