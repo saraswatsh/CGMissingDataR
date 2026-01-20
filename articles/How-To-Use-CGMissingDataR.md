@@ -39,6 +39,7 @@ library(CGMissingDataR)
 tmp <- tempfile(fileext = ".csv") # Creating a temporary file to store the dataset
 write.csv(CGMExampleData, tmp, row.names = FALSE) # Writing the example dataset to the temporary file
 results <- run_missingness_benchmark(tmp, mask_rates = c(0.05, 0.10, 0.15, 0.20)) # Running the missingness benchmark
+#> Downloading uv...Done!
 print(results) # Displaying the first few rows of the results
 #>   MaskRate         Model     MAPE        R2
 #> 1      10% Random Forest 7.967675 0.7271567

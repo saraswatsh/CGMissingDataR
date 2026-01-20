@@ -76,13 +76,12 @@ Shubh Saraswat, Hasin Shahed Shad, and Xiaohua Douglas Zhang
 data("CGMExampleData")
 tmp <- tempfile(fileext = ".csv")
 write.csv(CGMExampleData, tmp, row.names = FALSE)
-results <- run_missingness_benchmark(tmp, mask_rates = c(0.05, 0.10))
-#> Downloading uv...
-#> Done!
-head(results)
-#>   MaskRate         Model     MAPE        R2
-#> 1      10% Random Forest 7.967675 0.7271567
-#> 2      10%           KNN 8.453916 0.6986401
-#> 3       5% Random Forest 7.074092 0.8014757
-#> 4       5%           KNN 7.579474 0.7785196
+if (requireNamespace("reticulate", quietly = TRUE) &&
+    reticulate::py_available(initialize = FALSE) &&
+    reticulate::py_module_available("numpy") &&
+    reticulate::py_module_available("pandas") &&
+    reticulate::py_module_available("sklearn")) {
+  results <- run_missingness_benchmark(tmp, mask_rates = c(0.05, 0.10))
+  head(results)
+}
 ```

@@ -12,6 +12,11 @@ for evaluating model performance under feature missingness by:
 
 ## Installation
 
+Prior to installation, ensure that you have Python and the required
+Python packages installed. When using CGMissingDataR, the package should
+automatically set up a suitable Python environment via the `reticulate`
+package and install the necessary dependencies.
+
 R Prerequisites:
 
 ``` r
