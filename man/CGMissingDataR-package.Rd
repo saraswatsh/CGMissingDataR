@@ -12,6 +12,7 @@ Evaluates predictive performance under feature-level missingness in repeated-mea
 Useful links:
 \itemize{
   \item \url{https://github.com/saraswatsh/CGMissingDataR}
+  \item \url{https://saraswatsh.github.io/CGMissingDataR/}
   \item Report bugs at \url{https://github.com/saraswatsh/CGMissingDataR/issues}
 }
 

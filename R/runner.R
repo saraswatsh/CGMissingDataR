@@ -1,4 +1,4 @@
-#' Run missingness benchmark
+#' @title Missing Data Benchmark Runner
 #'
 #' @description
 #' Loads a CSV, splits train/validation, masks feature values at various rates,
@@ -26,8 +26,14 @@
 #' data("CGMExampleData")
 #' tmp <- tempfile(fileext = ".csv")
 #' write.csv(CGMExampleData, tmp, row.names = FALSE)
-#' results <- run_missingness_benchmark(tmp, mask_rates = c(0.05, 0.10))
-#' head(results)
+#' if (requireNamespace("reticulate", quietly = TRUE) &&
+#'     reticulate::py_available(initialize = FALSE) &&
+#'     reticulate::py_module_available("numpy") &&
+#'     reticulate::py_module_available("pandas") &&
+#'     reticulate::py_module_available("sklearn")) {
+#'   results <- run_missingness_benchmark(tmp, mask_rates = c(0.05, 0.10))
+#'   head(results)
+#' }
 #' @export
 run_missingness_benchmark <- function(
   data_path,

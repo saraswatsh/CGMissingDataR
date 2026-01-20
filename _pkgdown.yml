@@ -1,0 +1,36 @@
+url: https://saraswatsh.github.io/CGMissingDataR/
+template:
+  bootstrap: 5
+  light-switch: yes
+home:
+  title: Welcome to CGMissingDataR
+  tagline: An R package for handling missing data in continuous glucose monitoring
+    (CGM) datasets.
+  links:
+  - text: Read more
+    href: articles/How-To-Use-CGMissingDataR.html
+navbar:
+  title: CGMissingDataR
+  left:
+  - text: Reference
+    href: reference/index.html
+  - text: Articles
+    href: articles/index.html
+  - text: News
+    menu:
+    - text: Changelog
+      href: news/index.html
+articles:
+- title: How To Use CGMissingDataR
+  contents: How-To-Use-CGMissingDataR
+reference:
+- title: Running Benchmark
+  contents: run_missingness_benchmark
+- title: Datasets
+  contents: CGMExampleData
+footer:
+  left: © 2026 Shubh Saraswat
+  right: Built with pkgdown
+development:
+  mode: auto
+

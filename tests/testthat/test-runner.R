@@ -1,4 +1,5 @@
 test_that("run_missingness_benchmark returns expected columns", {
+  skip_if_no_cgmd_python()
   skip_if_not_installed("reticulate")
 
   # Minimal synthetic CSV
