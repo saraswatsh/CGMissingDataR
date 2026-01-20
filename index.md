@@ -27,9 +27,9 @@ devtools::install_github("saraswatsh/CGMissingDataR")
 ## Vignette
 
 A brief vignette illustrating the usage of CGMissingDataR can be found
-[here](https://saraswatsh.github.io/CGMissingDataR/vignettes/How-To-Use-CGMissingDataR.html).
+[here](https://saraswatsh.github.io/CGMissingDataR/articles/How-To-Use-CGMissingDataR.html).
 
 ## Changelog
 
 The changelog is available
-[here](https://saraswatsh.github.io/CGMissingDataR/NEWS.md).
+[here](https://saraswatsh.github.io/CGMissingDataR/news/index.html).
