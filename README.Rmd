@@ -1,0 +1,38 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# CGMissingDataR
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+CGMissingDataR is an R package wrapping the CGMissingData Python library for evaluating model performance under feature missingness by: 
+
+* injecting missing values into feature columns at specified masking rates, 
+* imputing missing values using a Multiple Imputation by Chained Equations (MICE)-style iterative imputer, and
+* training Random Forest and k-Nearest Neighbors regressors to report Mean ABsolute Percentage Error (MAPE) and R across missingness levels. 
+
+## Installation
+
+R Prerequisites:
+
+```r
+install.packages("reticulate")
+```
+Install the development version of CGMissingDataR from GitHub:
+
+``` r
+devtools::install_github("saraswatsh/CGMissingDataR")
+```

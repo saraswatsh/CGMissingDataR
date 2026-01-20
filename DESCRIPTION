@@ -1,0 +1,28 @@
+Package: CGMissingData
+Title: Missingness Benchmark (MICE Imputation, Random Forest, kNN)
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Shubh", "Saraswat", email = "shubh.saraswat00@gmail.com", role = c("cre", "aut", "cph"),
+    comment = c(ORCID = "0009-0009-2359-1484")),
+    person("Hasin Shahed Shad", email = "hasin.shad@uky.edu", role = "aut"),
+    person("Xiaohua Douglas", "Zhang", email = "douglas.zhang@uky.edu", role = "aut",
+    comment = c(ORCID = "0000-0002-2486-7931")))
+Description: Provides an R interface to a small Python benchmark that masks feature values,
+    performs MICE-style imputation, trains Random Forest and kNN regressors, and reports
+    MAPE and R2 across missingness rates.
+License: GPL (>= 2)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 4.3)
+RoxygenNote: 7.3.3
+Imports:
+    reticulate
+Suggests:
+    testthat (>= 3.0.0),
+    spelling, 
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
+NeedsCompilation: no
+Language: en-US
+
