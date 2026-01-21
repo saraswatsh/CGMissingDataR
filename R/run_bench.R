@@ -141,7 +141,7 @@ run_missingness_benchmark <- function(
   }
 
   for (rate in mask_rates) {
-    set.seed(100 + as.integer(rate * 100))
+    set.seed(seed + as.integer(rate * 100))
     # --- Masking Function ---
     mask_matrix <- function(dat, r) {
       d_out <- dat

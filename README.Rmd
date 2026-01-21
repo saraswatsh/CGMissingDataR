@@ -35,6 +35,11 @@ Install the development version of CGMissingDataR from GitHub:
 ``` r
 devtools::install_github("saraswatsh/CGMissingDataR")
 ```
+Install `CGMissingDataR`from CRAN with: 
+
+```r
+install.packages("CGMissingDataR")
+```
 
 ## Vignette
 
