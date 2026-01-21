@@ -2,7 +2,7 @@
 
 ## CGMissingDataR
 
-CGMissingDataR is an R package wrapping the CGMissingData Python library
+CGMissingDataR is an R package based on the CGMissingData Python library
 for evaluating model performance under feature missingness by:
 
 - injecting missing values into feature columns at specified masking
@@ -14,12 +14,11 @@ for evaluating model performance under feature missingness by:
 
 ### Installation
 
-Before the installation, ensure that you have Python and the required
-Python packages installed. You can use the `reticulate` package to
-manage Python environments from R.
+Before the installation, ensure that you have the following R packages
+installed:
 
 ``` r
-install.packages("reticulate")
+install.packages(c("FNN", "ranger", "mice"))
 ```
 
 Install the development version of CGMissingDataR from GitHub:
@@ -36,18 +35,21 @@ Below is a brief example illustrating the usage of CGMissingDataR.
 library(CGMissingDataR)
 
 # Load example dataset
-tmp <- tempfile(fileext = ".csv") # Creating a temporary file to store the dataset
-write.csv(CGMExampleData, tmp, row.names = FALSE) # Writing the example dataset to the temporary file
-results <- run_missingness_benchmark(tmp, mask_rates = c(0.05, 0.10, 0.15, 0.20)) # Running the missingness benchmark
-#> Downloading uv...Done!
-print(results) # Displaying the first few rows of the results
-#>   MaskRate         Model     MAPE        R2
-#> 1      10% Random Forest 7.967675 0.7271567
-#> 2      10%           KNN 8.453916 0.6986401
-#> 3      15% Random Forest 8.540646 0.6920470
-#> 4      15%           KNN 9.048134 0.6627346
-#> 5      20% Random Forest 9.244178 0.6450390
-#> 6      20%           KNN 9.685732 0.6158767
-#> 7       5% Random Forest 7.074092 0.8014757
-#> 8       5%           KNN 7.579474 0.7785196
+data("CGMExampleData")
+results <- run_missingness_benchmark(CGMExampleData, mask_rates = c(0.05, 0.10, 0.15, 0.20),target_col = "LBORRES", # Running the missingness benchmark
+feature_cols = c("TimeDifferenceMinutes", "TimeSeries", "USUBJID")) 
+#> Warning: Number of logged events: 1
+#> Warning: Number of logged events: 1
+#> Warning: Number of logged events: 1
+#> Warning: Number of logged events: 1
+print(results) # Displaying the results
+#>   MaskRate         Model      MAPE        R2
+#> 1       5% Random Forest  7.425061 0.7487709
+#> 2       5%           kNN  7.812956 0.7314915
+#> 3      10% Random Forest  8.471379 0.6660876
+#> 4      10%           kNN  8.957239 0.6397430
+#> 5      15% Random Forest  9.775851 0.5552681
+#> 6      15%           kNN 10.107433 0.5384117
+#> 7      20% Random Forest 10.560843 0.4939590
+#> 8      20%           kNN 11.110390 0.4642746
 ```

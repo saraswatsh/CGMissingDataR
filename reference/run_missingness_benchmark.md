@@ -1,70 +1,93 @@
-# Missing Data Benchmark Runner
+# Run missingness benchmark
 
-Loads a CSV, splits train/validation, masks feature values at various
-rates, imputes via an Iterative Imputer (MICE-style), trains Random
-Forest and kNN regressors, and returns MAPE and R2 per model and mask
-rate.
+Benchmarks model performance under feature missingness. The function:
 
-This function is a thin R wrapper over the Python implementation shipped
-in `inst/python/CGMissingData`.
+1.  Filters to complete cases for `target_col` and `feature_cols`
+    (baseline complete data),
+
+2.  Splits into training/validation,
+
+3.  Masks feature values at each rate using Bernoulli (cell-wise)
+    missingness,
+
+4.  Imputes missing features using MICE on training data and applies the
+    fitted imputation model to validation data via
+    `mice::mice.mids(newdata = ...)` (reduces leakage),
+
+5.  Trains Random Forest (`ranger`) and kNN regression
+    ([`FNN::knn.reg`](https://rdrr.io/pkg/FNN/man/knn.reg.html)),
+
+6.  Returns MAPE and R-squared for each model and mask rate.
+
+Feature columns must be numeric (or coercible to numeric without
+introducing new missing values). This mirrors workflows where features
+are treated as numeric arrays.
 
 ## Usage
 
 ``` r
 run_missingness_benchmark(
-  data_path,
-  target_col = "LBORRES",
-  feature_cols = c("TimeSeries", "TimeDifferenceMinutes", "USUBJID"),
-  mask_rates = c(0.05, 0.1, 0.2, 0.3, 0.4),
-  test_size = 0.2,
-  random_state = 42,
-  imputer_random_state = 42,
+  data,
+  target_col,
+  feature_cols = NULL,
+  mask_rates = c(0.05, 0.1, 0.2, 0.3),
   rf_n_estimators = 200,
-  knn_k = 5
+  knn_k = 5,
+  test_size = 0.2,
+  seed = 42
 )
 ```
 
 ## Arguments
 
-- data_path:
+- data:
 
-  Path to a CSV file.
+  A data.frame (or object coercible to data.frame) containing the
+  dataset.
 
 - target_col:
 
-  Name of the target column.
+  Single character string: name of the outcome column.
 
 - feature_cols:
 
-  Character vector of feature column names.
+  Character vector of feature column names. If `NULL`, uses all columns
+  except `target_col`.
 
 - mask_rates:
 
-  Numeric vector of missingness rates (0-1).
-
-- test_size:
-
-  Validation split fraction.
-
-- random_state:
-
-  Random seed for train/val splitting and model seeding.
-
-- imputer_random_state:
-
-  Random seed for the iterative imputer.
+  Numeric vector in (0, 1): proportion of feature entries to mask per
+  rate.
 
 - rf_n_estimators:
 
-  Number of trees for the random forest.
+  Integer: number of trees for the random forest.
 
 - knn_k:
 
-  Number of neighbors for kNN.
+  Integer: number of neighbors for kNN regression.
+
+- test_size:
+
+  Numeric in (0, 1): fraction of rows assigned to validation split.
+
+- seed:
+
+  Integer: seed for data split and model reproducibility.
 
 ## Value
 
-A data.frame with columns MaskRate, Model, MAPE, R2.
+A data.frame with columns `MaskRate`, `Model`, `MAPE`, and `R2`.
+
+## Details
+
+Validation imputation is performed using
+`mice::mice.mids(newdata = ...)`, which generates imputations for new
+data according to the model stored in the training `mids` object.
+
+MAPE is computed using
+[`Metrics::mape()`](https://rdrr.io/pkg/Metrics/man/mape.html) on
+non-zero targets only to avoid instability when actual values are zero.
 
 ## Author
 
@@ -74,14 +97,17 @@ Shubh Saraswat, Hasin Shahed Shad, and Xiaohua Douglas Zhang
 
 ``` r
 data("CGMExampleData")
-tmp <- tempfile(fileext = ".csv")
-write.csv(CGMExampleData, tmp, row.names = FALSE)
-if (requireNamespace("reticulate", quietly = TRUE) &&
-    reticulate::py_available(initialize = FALSE) &&
-    reticulate::py_module_available("numpy") &&
-    reticulate::py_module_available("pandas") &&
-    reticulate::py_module_available("sklearn")) {
-  results <- run_missingness_benchmark(tmp, mask_rates = c(0.05, 0.10))
-  head(results)
-}
+run_missingness_benchmark(
+  CGMExampleData,
+  target_col = "LBORRES",
+  feature_cols = c("TimeDifferenceMinutes", "TimeSeries", "USUBJID"),
+  mask_rates = c(0.05, 0.10)
+)
+#> Warning: Number of logged events: 1
+#> Warning: Number of logged events: 1
+#>   MaskRate         Model     MAPE        R2
+#> 1       5% Random Forest 7.425061 0.7487709
+#> 2       5%           kNN 7.812956 0.7314915
+#> 3      10% Random Forest 8.471379 0.6660876
+#> 4      10%           kNN 8.957239 0.6397430
 ```
