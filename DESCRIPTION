@@ -14,7 +14,10 @@ Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.3)
 RoxygenNote: 7.3.3
 Imports:
-    reticulate
+    mice,
+    FNN,
+    Metrics,
+    ranger
 Suggests:
     testthat (>= 3.0.0),
     spelling, 

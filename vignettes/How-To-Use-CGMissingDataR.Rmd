@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 # CGMissingDataR
 
-CGMissingDataR is an R package wrapping the CGMissingData Python library for evaluating model performance under feature missingness by: 
+CGMissingDataR is an R package based on the CGMissingData Python library for evaluating model performance under feature missingness by: 
 
 * injecting missing values into feature columns at specified masking rates, 
 * imputing missing values using a Multiple Imputation by Chained Equations (MICE)-style iterative imputer, and
@@ -24,10 +24,10 @@ CGMissingDataR is an R package wrapping the CGMissingData Python library for eva
 
 ## Installation
 
-Before the installation, ensure that you have Python and the required Python packages installed. You can use the `reticulate` package to manage Python environments from R.
+Before the installation, ensure that you have the following R packages installed: 
 
 ```r
-install.packages("reticulate")
+install.packages(c("FNN", "ranger", "mice"))
 ```
 Install the development version of CGMissingDataR from GitHub:
 
@@ -43,8 +43,8 @@ Below is a brief example illustrating the usage of CGMissingDataR.
 library(CGMissingDataR)
 
 # Load example dataset
-tmp <- tempfile(fileext = ".csv") # Creating a temporary file to store the dataset
-write.csv(CGMExampleData, tmp, row.names = FALSE) # Writing the example dataset to the temporary file
-results <- run_missingness_benchmark(tmp, mask_rates = c(0.05, 0.10, 0.15, 0.20)) # Running the missingness benchmark
-print(results) # Displaying the first few rows of the results
+data("CGMExampleData")
+results <- run_missingness_benchmark(CGMExampleData, mask_rates = c(0.05, 0.10, 0.15, 0.20),target_col = "LBORRES", # Running the missingness benchmark
+feature_cols = c("TimeDifferenceMinutes", "TimeSeries", "USUBJID")) 
+print(results) # Displaying the results
 ```
