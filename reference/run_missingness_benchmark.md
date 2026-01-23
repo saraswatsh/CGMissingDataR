@@ -106,8 +106,8 @@ run_missingness_benchmark(
 #> Warning: Number of logged events: 1
 #> Warning: Number of logged events: 1
 #>   MaskRate         Model     MAPE        R2
-#> 1       5% Random Forest 7.425061 0.7487709
-#> 2       5%           kNN 7.812956 0.7314915
-#> 3      10% Random Forest 8.471379 0.6660876
-#> 4      10%           kNN 8.957239 0.6397430
+#> 1       5% Random Forest 7.497932 0.7418421
+#> 2       5%           kNN 7.898898 0.7276014
+#> 3      10% Random Forest 8.510749 0.6683246
+#> 4      10%           kNN 9.143478 0.6315460
 ```

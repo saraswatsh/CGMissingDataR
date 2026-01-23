@@ -44,12 +44,12 @@ feature_cols = c("TimeDifferenceMinutes", "TimeSeries", "USUBJID"))
 #> Warning: Number of logged events: 1
 print(results) # Displaying the results
 #>   MaskRate         Model      MAPE        R2
-#> 1       5% Random Forest  7.425061 0.7487709
-#> 2       5%           kNN  7.812956 0.7314915
-#> 3      10% Random Forest  8.471379 0.6660876
-#> 4      10%           kNN  8.957239 0.6397430
-#> 5      15% Random Forest  9.775851 0.5552681
-#> 6      15%           kNN 10.107433 0.5384117
-#> 7      20% Random Forest 10.560843 0.4939590
-#> 8      20%           kNN 11.110390 0.4642746
+#> 1       5% Random Forest  7.497932 0.7418421
+#> 2       5%           kNN  7.898898 0.7276014
+#> 3      10% Random Forest  8.510749 0.6683246
+#> 4      10%           kNN  9.143478 0.6315460
+#> 5      15% Random Forest  9.758954 0.5598508
+#> 6      15%           kNN 10.345550 0.5201831
+#> 7      20% Random Forest 10.189505 0.5363248
+#> 8      20%           kNN 10.772825 0.4916150
 ```
