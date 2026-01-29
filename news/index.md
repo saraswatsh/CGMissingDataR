@@ -1,5 +1,5 @@
 # Changelog
 
-## CGMissingDataR 0.0.0.9000
+## CGMissingDataR 0.0.1
 
 - Initial package creation preparing for CRAN submission.
