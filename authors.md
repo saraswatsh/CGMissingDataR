@@ -13,16 +13,16 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/saraswatsh/CGMissingDataR/blob/master/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/ZhangLabUKY/CGMissingDataR/blob/master/DESCRIPTION)
 
 Saraswat S, Hasin Shahed Shad, Zhang X (2026). *CGMissingDataR:
-Missingness Benchmark (MICE Imputation, Random Forest, kNN)*. R package
-version 0.0.0.9000, <https://github.com/saraswatsh/CGMissingDataR>.
+Missingness Benchmark for Continuous Glucose Monitoring Data*. R package
+version 0.0.1, <https://zhanglabuky.github.io/CGMissingDataR/>.
 
     @Manual{,
-      title = {CGMissingDataR: Missingness Benchmark (MICE Imputation, Random Forest, kNN)},
+      title = {CGMissingDataR: Missingness Benchmark for Continuous Glucose Monitoring Data},
       author = {Shubh Saraswat and {Hasin Shahed Shad} and Xiaohua Douglas Zhang},
       year = {2026},
-      note = {R package version 0.0.0.9000},
-      url = {https://github.com/saraswatsh/CGMissingDataR},
+      note = {R package version 0.0.1},
+      url = {https://zhanglabuky.github.io/CGMissingDataR/},
     }

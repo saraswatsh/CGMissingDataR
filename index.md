@@ -20,15 +20,21 @@ install.packages(c("FNN", "ranger", "mice"))
 Install the development version of CGMissingDataR from GitHub:
 
 ``` r
-devtools::install_github("saraswatsh/CGMissingDataR")
+devtools::install_github("ZhangLabUKY/CGMissingDataR")
+```
+
+Install `CGMissingDataR`from CRAN with:
+
+``` r
+install.packages("CGMissingDataR")
 ```
 
 ## Vignette
 
 A brief vignette illustrating the usage of CGMissingDataR can be found
-[here](https://saraswatsh.github.io/CGMissingDataR/articles/How-To-Use-CGMissingDataR.html).
+[here](https://zhanglabuky.github.io/CGMissingDataR/articles/How-To-Use-CGMissingDataR.html).
 
 ## Changelog
 
 The changelog is available
-[here](https://saraswatsh.github.io/CGMissingDataR/news/index.html).
+[here](https://zhanglabuky.github.io/CGMissingDataR/news/index.html).

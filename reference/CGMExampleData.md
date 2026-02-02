@@ -1,7 +1,7 @@
 # Example dataset for CGMissingData
 
 A small synthetic dataset intended for examples and tests of
-[`run_missingness_benchmark()`](https://saraswatsh.github.io/CGMissingDataR/reference/run_missingness_benchmark.md).
+[`run_missingness_benchmark()`](https://zhanglabuky.github.io/CGMissingDataR/reference/run_missingness_benchmark.md).
 
 ## Usage
 
