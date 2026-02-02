@@ -4,16 +4,16 @@
 \name{CGMissingDataR-package}
 \alias{CGMissingDataR}
 \alias{CGMissingDataR-package}
-\title{CGMissingDataR: Missingness Benchmark (MICE Imputation, Random Forest, kNN)}
+\title{CGMissingDataR: Missingness Benchmark for Continuous Glucose Monitoring Data}
 \description{
-Evaluates predictive performance under feature-level missingness in repeated-measures continuous glucose monitoring-like data. The benchmark injects missing values at user-specified rates, imputes incomplete feature matrices using an iterative chained-equations approach inspired by multivariate imputation by chained equations (MICE) (Melissa J. Azur, Elizabeth A. Stuart, Constantine Frangakis and Philip J. Leaf (2011) \doi{10.1002/mpr.329}), fits Random Forest regression models (Leo Breiman (2001) \doi{10.1023/A:1010933404324}) and k-nearest-neighbor regression models (Zhongheng Zhang (2016) \doi{10.21037/atm.2016.03.37}), and reports mean absolute percentage error (MAPE) and R-squared (R2) across missingness rates.
+Evaluates predictive performance under feature-level missingness in repeated-measures continuous glucose monitoring-like data. The benchmark injects missing values at user-specified rates, imputes incomplete feature matrices using an iterative chained-equations approach inspired by multivariate imputation by chained equations (MICE; Azur et al. (2011) \doi{10.1002/mpr.329}), fits Random Forest regression models (Breiman (2001) \doi{10.1023/A:1010933404324}) and k-nearest-neighbor regression models (Zhang (2016) \doi{10.21037/atm.2016.03.37}), and reports mean absolute percentage error and R-squared across missingness rates.
 }
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/saraswatsh/CGMissingDataR}
-  \item \url{https://saraswatsh.github.io/CGMissingDataR/}
-  \item Report bugs at \url{https://github.com/saraswatsh/CGMissingDataR/issues}
+  \item \url{https://zhanglabuky.github.io/CGMissingDataR/}
+  \item \url{https://github.com/ZhangLabUKY/CGMissingDataR}
+  \item Report bugs at \url{https://github.com/ZhangLabUKY/CGMissingDataR/issues}
 }
 
 }

@@ -63,7 +63,9 @@ run_missingness_benchmark(
   CGMExampleData,
   target_col = "LBORRES",
   feature_cols = c("TimeDifferenceMinutes", "TimeSeries", "USUBJID"),
-  mask_rates = c(0.05, 0.10)
+  mask_rates = c(0.05, 0.10),
+  rf_n_estimators = 100,
+  knn_k = 3
 )
 
 }
