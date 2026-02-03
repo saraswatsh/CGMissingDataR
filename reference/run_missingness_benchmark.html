@@ -29,7 +29,7 @@ This mirrors workflows where features are treated as numeric arrays."></head><bo
 
     <a class="navbar-brand me-2" href="../index.html">CGMissingDataR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.0.1</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +45,7 @@ This mirrors workflows where features are treated as numeric arrays."></head><bo
   </ul></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/ZhangLabUKY/CGMissingDataR/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/saraswatsh/CGMissingDataR/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch"><li><button class="dropdown-item" data-bs-theme-value="light"><span class="fa fa-sun"></span> Light</button></li>
@@ -61,7 +61,7 @@ This mirrors workflows where features are treated as numeric arrays."></head><bo
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Run missingness benchmark</h1>
-      <small class="dont-index">Source: <a href="https://github.com/ZhangLabUKY/CGMissingDataR/blob/master/R/run_bench.R" class="external-link"><code>R/run_bench.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/saraswatsh/CGMissingDataR/blob/v0.0.1/R/run_bench.R" class="external-link"><code>R/run_bench.R</code></a></small>
       <div class="d-none name"><code>run_missingness_benchmark.Rd</code></div>
     </div>
 
@@ -150,17 +150,15 @@ for new data according to the model stored in the training <code>mids</code> obj
 <span class="r-in"><span>  <span class="va">CGMExampleData</span>,</span></span>
 <span class="r-in"><span>  target_col <span class="op">=</span> <span class="st">"LBORRES"</span>,</span></span>
 <span class="r-in"><span>  feature_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"TimeDifferenceMinutes"</span>, <span class="st">"TimeSeries"</span>, <span class="st">"USUBJID"</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>  mask_rates <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.05</span>, <span class="fl">0.10</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>  rf_n_estimators <span class="op">=</span> <span class="fl">100</span>,</span></span>
-<span class="r-in"><span>  knn_k <span class="op">=</span> <span class="fl">3</span></span></span>
+<span class="r-in"><span>  mask_rates <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.05</span>, <span class="fl">0.10</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Number of logged events: 1</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Number of logged events: 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   MaskRate         Model     MAPE        R2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       5% Random Forest 7.519025 0.7402591</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2       5%           kNN 8.140677 0.7095650</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3      10% Random Forest 8.520641 0.6684686</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4      10%           kNN 9.417613 0.6036350</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1       5% Random Forest 7.497932 0.7418421</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2       5%           kNN 7.898898 0.7276014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3      10% Random Forest 8.510749 0.6683246</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4      10%           kNN 9.143478 0.6315460</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

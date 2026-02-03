@@ -24,7 +24,7 @@ install.packages(c("FNN", "ranger", "mice"))
 Install the development version of CGMissingDataR from GitHub:
 
 ``` r
-devtools::install_github("ZhangLabUKY/CGMissingDataR")
+devtools::install_github("saraswatsh/CGMissingDataR")
 ```
 
 ### Example

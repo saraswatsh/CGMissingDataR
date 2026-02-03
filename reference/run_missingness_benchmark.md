@@ -101,15 +101,13 @@ run_missingness_benchmark(
   CGMExampleData,
   target_col = "LBORRES",
   feature_cols = c("TimeDifferenceMinutes", "TimeSeries", "USUBJID"),
-  mask_rates = c(0.05, 0.10),
-  rf_n_estimators = 100,
-  knn_k = 3
+  mask_rates = c(0.05, 0.10)
 )
 #> Warning: Number of logged events: 1
 #> Warning: Number of logged events: 1
 #>   MaskRate         Model     MAPE        R2
-#> 1       5% Random Forest 7.519025 0.7402591
-#> 2       5%           kNN 8.140677 0.7095650
-#> 3      10% Random Forest 8.520641 0.6684686
-#> 4      10%           kNN 9.417613 0.6036350
+#> 1       5% Random Forest 7.497932 0.7418421
+#> 2       5%           kNN 7.898898 0.7276014
+#> 3      10% Random Forest 8.510749 0.6683246
+#> 4      10%           kNN 9.143478 0.6315460
 ```
