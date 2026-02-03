@@ -1,0 +1,9 @@
+pandoc: 3.1.11
+pkgdown: 2.2.0
+pkgdown_sha: ~
+articles:
+  How-To-Use-CGMissingDataR: How-To-Use-CGMissingDataR.html
+last_built: 2026-02-03T13:28Z
+urls:
+  reference: https://zhanglabuky.github.io/CGMissingDataR/reference
+  article: https://zhanglabuky.github.io/CGMissingDataR/articles

@@ -1,0 +1,59 @@
+# CGMissingDataR
+
+CGMissingDataR is an R package based on the CGMissingData Python library
+for evaluating model performance under feature missingness by:
+
+- injecting missing values into feature columns at specified masking
+  rates,
+- imputing missing values using a Multiple Imputation by Chained
+  Equations (MICE)-style iterative imputer, and
+- training Random Forest and k-Nearest Neighbors regressors to report
+  Mean ABsolute Percentage Error (MAPE) and R across missingness levels.
+
+Before the installation, ensure that you have the following R packages
+installed:
+
+``` r
+install.packages(c("FNN", "ranger", "mice"))
+```
+
+Install the development version of CGMissingDataR from GitHub:
+
+``` r
+devtools::install_github("ZhangLabUKY/CGMissingDataR")
+```
+
+Install `CGMissingDataR`from CRAN with:
+
+``` r
+install.packages("CGMissingDataR")
+```
+
+## Vignette
+
+A brief vignette illustrating the usage of CGMissingDataR can be found
+[here](https://zhanglabuky.github.io/CGMissingDataR/articles/How-To-Use-CGMissingDataR.html).
+
+## Changelog
+
+The changelog is available
+[here](https://zhanglabuky.github.io/CGMissingDataR/news/index.html).
+
+# Package index
+
+## Running Benchmark
+
+- [`run_missingness_benchmark()`](https://zhanglabuky.github.io/CGMissingDataR/dev/reference/run_missingness_benchmark.md)
+  : Run missingness benchmark
+
+## Datasets
+
+- [`CGMExampleData`](https://zhanglabuky.github.io/CGMissingDataR/dev/reference/CGMExampleData.md)
+  : Example dataset for CGMissingData
+
+# Articles
+
+### How To Use CGMissingDataR
+
+- [How To Use
+  CGMissingDataR](https://zhanglabuky.github.io/CGMissingDataR/dev/articles/How-To-Use-CGMissingDataR.md):
